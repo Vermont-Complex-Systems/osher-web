@@ -1,0 +1,65 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Deploy on every push to the default branch
+  push:
+    branches: [main]
+  # ...and allow manual runs from the Actions tab
+  workflow_dispatch:
+
+# Grant the token the permissions Pages needs
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; don't cancel an in-progress one
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        # enablement: true turns on GitHub Pages (Actions source) on the first run,
+        # so you don't have to flip it manually in Settings → Pages.
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          # Serve under /<repo> on a project Pages site (e.g. /osher-web).
+          # If you deploy to a user/org root or a custom domain, set this to ''.
+          BASE_PATH: /${{ github.event.repository.name }}
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

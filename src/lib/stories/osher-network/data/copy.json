@@ -1,0 +1,29 @@
+{
+	"title": "Osher Network",
+	"subtitle": "Story subtitle",
+	"authors": [
+		{
+			"name": "Author Name",
+			"url": ""
+		}
+	],
+	"date": "Jul 8, 2026",
+	"steps": [
+		{
+			"type": "markdown",
+			"value": "This is the **first step**. All bars start neutral."
+		},
+		{
+			"type": "markdown",
+			"value": "Now we highlight **bar B** — the highest value."
+		},
+		{
+			"type": "markdown",
+			"value": "Let's look at **bar A** instead."
+		},
+		{
+			"type": "markdown",
+			"value": "Finally, the Y-axis **zooms in** using Tween — bars grow as maxValue shrinks."
+		}
+	]
+}

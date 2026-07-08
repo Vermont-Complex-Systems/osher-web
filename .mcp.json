@@ -1,0 +1,14 @@
+{
+	"mcpServers": {
+		"scrolly-kit": {
+			"command": "npx",
+			"args": [
+				"@the-vcsi/scrolly-mcp"
+			]
+		},
+		"svelte": {
+			"type": "http",
+			"url": "https://mcp.svelte.dev/mcp"
+		}
+	}
+}
