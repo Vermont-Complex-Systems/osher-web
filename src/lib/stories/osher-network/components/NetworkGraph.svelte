@@ -163,11 +163,26 @@
 		neighbors.get(e.source).add(e.target);
 		neighbors.get(e.target).add(e.source);
 	}
-	const isNeighbor = (id, ofId) => neighbors.get(ofId)?.has(id) ?? false;
+
+	// hierarchy spokes: each department links up to its parent college / unit
+	const byId = new Map(nodeObjs.map((n) => [n.id, n]));
+	const parentPairs = nodeObjs
+		.filter((n) => n.parent && byId.has(n.parent))
+		.map((n) => [n, byId.get(n.parent)]);
+
+	// parent → [children] and child → parent, for hierarchy-aware highlighting
+	const childrenOf = new Map();
+	const parentOf = new Map();
+	for (const [c, p] of parentPairs) {
+		parentOf.set(c.id, p.id);
+		if (!childrenOf.has(p.id)) childrenOf.set(p.id, []);
+		childrenOf.get(p.id).push(c.id);
+	}
 
 	// ---- reactive snapshots the template renders from ----
 	let renderNodes = $state(nodeObjs.map((n) => ({ ...n })));
 	let renderLinks = $state([]);
+	let renderSpokes = $state([]);
 
 	$effect(() => {
 		if (!browser) return;
@@ -219,6 +234,15 @@
 					y2: l.target.y,
 					sourceId: l.source.id,
 					targetId: l.target.id
+				}));
+				renderSpokes = parentPairs.map(([c, p]) => ({
+					x1: c.x,
+					y1: c.y,
+					x2: p.x,
+					y2: p.y,
+					stroke: fill(p),
+					childId: c.id,
+					parentId: p.id
 				}));
 			});
 
@@ -288,11 +312,24 @@
 		selectedId = null;
 	}
 
-	// a node is dimmed when something else is selected and it's neither the
-	// selection nor one of its neighbors
-	const isDim = (n) => selectedId && n.id !== selectedId && !isNeighbor(n.id, selectedId);
-	// a link is lit when nothing is selected, or it touches the selection
-	const isLit = (l) => !selectedId || l.sourceId === selectedId || l.targetId === selectedId;
+	// The set of nodes kept lit while `selectedId` is active: the node itself, its
+	// project collaborators, its parent college — and, if it's a college, all of
+	// its departments plus *their* projects (the college's collaboration footprint).
+	const litSet = $derived.by(() => {
+		if (!selectedId) return null;
+		const set = new Set([selectedId]);
+		for (const nb of neighbors.get(selectedId) ?? []) set.add(nb);
+		if (parentOf.has(selectedId)) set.add(parentOf.get(selectedId));
+		for (const childId of childrenOf.get(selectedId) ?? []) {
+			set.add(childId);
+			for (const nb of neighbors.get(childId) ?? []) set.add(nb);
+		}
+		return set;
+	});
+
+	const isDim = (n) => litSet !== null && !litSet.has(n.id);
+	const isLit = (l) => litSet === null || (litSet.has(l.sourceId) && litSet.has(l.targetId));
+	const isSpokeLit = (s) => litSet === null || (litSet.has(s.childId) && litSet.has(s.parentId));
 </script>
 
 <figure class="network">
@@ -310,6 +347,20 @@
 		<!-- ring guides -->
 		<ellipse class="guide" cx={CX} cy={CY} rx={R_DEPT} ry={R_DEPT * AY} />
 		<ellipse class="guide" cx={CX} cy={CY} rx={R_OUTER} ry={R_OUTER * AY} />
+
+		<!-- hierarchy spokes: department → its parent college / unit -->
+		<g class="spokes">
+			{#each renderSpokes as s, i (i)}
+				<line
+					x1={s.x1}
+					y1={s.y1}
+					x2={s.x2}
+					y2={s.y2}
+					stroke={s.stroke}
+					stroke-opacity={selectedId ? (isSpokeLit(s) ? 0.7 : 0.05) : 0.45}
+				/>
+			{/each}
+		</g>
 
 		<!-- edges -->
 		<g class="edges">
@@ -587,6 +638,16 @@
 	.edges line {
 		stroke: currentColor;
 		/* opacity is set per-line via the stroke-opacity attribute so selection can drive it */
+	}
+
+	.spokes {
+		pointer-events: none;
+	}
+
+	.spokes line {
+		stroke-width: 1.5;
+		stroke-linecap: round;
+		transition: stroke-opacity 0.2s ease;
 	}
 
 	.labels text {

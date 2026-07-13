@@ -66,6 +66,7 @@ SHORT = {
     "OBGYN (clinical)": "OBGYN (c)",
     "Psychiatry (academic)": "Psych (a)",
     # units / other entities
+    "Medical Group": "UVM Health",  # the clinical practice group (parent of the clinical depts)
     "BioMedical/Mechanical Eng": "BME/ME",
     "Complex Systems": "Complex Sys",
     "Employee Wellness": "Emp Wellness",
@@ -159,6 +160,59 @@ def main() -> None:
             if col < len(row) and is_x(row[col]):
                 edges.append({"source": node_id, "target": proj["id"]})
                 org_nodes[node_id]["n_projects"] += 1
+
+    # Synthesize a parent unit node (CNHS, LCOM, Medical Group, …) for any
+    # college/unit that only appears through its departments, so the college is
+    # visible on the outer ring and its departments link up to it.
+    unit_keys = {
+        (n["organization"], n["college_unit"])
+        for n in org_nodes.values()
+        if n["level"] == "unit"
+    }
+    unit_type_of: dict[tuple, str] = {}
+    for n in org_nodes.values():
+        if n["college_unit"]:
+            unit_type_of.setdefault(
+                (n["organization"], n["college_unit"]), n["college_unit_type"]
+            )
+
+    for n in list(org_nodes.values()):
+        if n["level"] != "dept" or not n["college_unit"]:
+            continue
+        key = (n["organization"], n["college_unit"])
+        unit_id = f"{n['organization']} / {n['college_unit']}"
+        # skip when the unit already exists, the dept *is* the unit (DEI), or the
+        # "unit" is really an admin department (PHSO/HR) — those aren't colleges.
+        if key in unit_keys or unit_id == n["id"] or unit_type_of.get(key) == "Department":
+            continue
+        unit_keys.add(key)
+        label = n["college_unit"]
+        org_nodes[unit_id] = {
+            "id": unit_id,
+            "type": "org",
+            "label": label,
+            "short": short_label(label),
+            "level": "unit",
+            "n_projects": 0,
+            "synthetic": True,
+            "organization": n["organization"],
+            "organization_type": n["organization_type"],
+            "college_unit": n["college_unit"],
+            "college_unit_type": unit_type_of.get(key, n["college_unit_type"]),
+            "department": "",
+            "division": "",
+        }
+
+    # Give each node a `parent` (a department -> its unit node) for the hierarchy
+    # spokes; units/orgs have no parent here.
+    unit_ids = {n["id"] for n in org_nodes.values() if n["level"] == "unit"}
+    for n in org_nodes.values():
+        parent = ""
+        if n["level"] == "dept" and n["college_unit"]:
+            cand = f"{n['organization']} / {n['college_unit']}"
+            if cand in unit_ids and cand != n["id"]:
+                parent = cand
+        n["parent"] = parent
 
     # Count participants per project.
     proj_degree: dict[str, int] = {}

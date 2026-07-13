@@ -11,7 +11,8 @@
     "college_unit": "Osher Center",
     "college_unit_type": "Center; Institute",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / Osher Center / Employee Welness (UVM)",
@@ -25,7 +26,8 @@
     "college_unit": "Osher Center",
     "college_unit_type": "Center; Institute",
     "department": "Employee Welness (UVM)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / Osher Center"
   },
   {
     "id": "UVM / CHWB",
@@ -39,7 +41,8 @@
     "college_unit": "CHWB",
     "college_unit_type": "Unit",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / DOIE",
@@ -53,7 +56,8 @@
     "college_unit": "DOIE",
     "college_unit_type": "Division",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / Gund",
@@ -67,7 +71,8 @@
     "college_unit": "Gund",
     "college_unit_type": "Center; Institute",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / Complex Systems",
@@ -81,7 +86,8 @@
     "college_unit": "Complex Systems",
     "college_unit_type": "Center; Institute",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / CNHS / RMS / Health Coaching",
@@ -95,7 +101,8 @@
     "college_unit": "CNHS",
     "college_unit_type": "College",
     "department": "RMS",
-    "division": "Health Coaching"
+    "division": "Health Coaching",
+    "parent": "UVM / CNHS"
   },
   {
     "id": "UVM / CNHS / Nursing",
@@ -109,7 +116,8 @@
     "college_unit": "CNHS",
     "college_unit_type": "College",
     "department": "Nursing",
-    "division": ""
+    "division": "",
+    "parent": "UVM / CNHS"
   },
   {
     "id": "UVM / CNHS / BHS",
@@ -123,7 +131,8 @@
     "college_unit": "CNHS",
     "college_unit_type": "College",
     "department": "BHS",
-    "division": ""
+    "division": "",
+    "parent": "UVM / CNHS"
   },
   {
     "id": "UVM / CALS / Nutrition",
@@ -137,7 +146,8 @@
     "college_unit": "CALS",
     "college_unit_type": "College",
     "department": "Nutrition",
-    "division": ""
+    "division": "",
+    "parent": "UVM / CALS"
   },
   {
     "id": "UVM / CALS / CDAE",
@@ -151,7 +161,8 @@
     "college_unit": "CALS",
     "college_unit_type": "College",
     "department": "CDAE",
-    "division": ""
+    "division": "",
+    "parent": "UVM / CALS"
   },
   {
     "id": "UVM / CALS",
@@ -165,7 +176,8 @@
     "college_unit": "CALS",
     "college_unit_type": "College",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / CASS / Psychology",
@@ -179,7 +191,8 @@
     "college_unit": "CASS",
     "college_unit_type": "College",
     "department": "Psychology",
-    "division": ""
+    "division": "",
+    "parent": "UVM / CASS"
   },
   {
     "id": "UVM / RSENR",
@@ -193,7 +206,8 @@
     "college_unit": "RSENR",
     "college_unit_type": "College",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / LCOM / Psychiatry (academic)",
@@ -207,7 +221,8 @@
     "college_unit": "LCOM",
     "college_unit_type": "College",
     "department": "Psychiatry (academic)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / LCOM"
   },
   {
     "id": "UVM / LCOM / Family Medicine (academic)",
@@ -221,7 +236,8 @@
     "college_unit": "LCOM",
     "college_unit_type": "College",
     "department": "Family Medicine (academic)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / LCOM"
   },
   {
     "id": "UVM / LCOM / Anastesiology (academic)",
@@ -235,7 +251,8 @@
     "college_unit": "LCOM",
     "college_unit_type": "College",
     "department": "Anastesiology (academic)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / LCOM"
   },
   {
     "id": "UVM / LCOM / Medicine (academic)",
@@ -249,7 +266,8 @@
     "college_unit": "LCOM",
     "college_unit_type": "College",
     "department": "Medicine (academic)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / LCOM"
   },
   {
     "id": "UVM / LCOM / Emergency Med (academic)",
@@ -263,7 +281,8 @@
     "college_unit": "LCOM",
     "college_unit_type": "College",
     "department": "Emergency Med (academic)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / LCOM"
   },
   {
     "id": "UVM / LCOM / Childrens Hospital (academic)",
@@ -277,7 +296,8 @@
     "college_unit": "LCOM",
     "college_unit_type": "College",
     "department": "Childrens Hospital (academic)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / LCOM"
   },
   {
     "id": "UVM / LCOM / OBGYN (academic)",
@@ -291,7 +311,8 @@
     "college_unit": "LCOM",
     "college_unit_type": "College",
     "department": "OBGYN (academic)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / LCOM"
   },
   {
     "id": "UVM / LCOM / Cancer Center (academic)",
@@ -305,7 +326,8 @@
     "college_unit": "LCOM",
     "college_unit_type": "College",
     "department": "Cancer Center (academic)",
-    "division": ""
+    "division": "",
+    "parent": "UVM / LCOM"
   },
   {
     "id": "UVM / CESS",
@@ -319,7 +341,8 @@
     "college_unit": "CESS",
     "college_unit_type": "College",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / GSB",
@@ -333,7 +356,8 @@
     "college_unit": "GSB",
     "college_unit_type": "College",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / CEMS / BioMedical/Mechanical Eng",
@@ -347,7 +371,8 @@
     "college_unit": "CEMS",
     "college_unit_type": "College",
     "department": "BioMedical/Mechanical Eng",
-    "division": ""
+    "division": "",
+    "parent": "UVM / CEMS"
   },
   {
     "id": "UVM / HCOL",
@@ -361,7 +386,8 @@
     "college_unit": "HCOL",
     "college_unit_type": "College",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVM / PACE",
@@ -375,7 +401,8 @@
     "college_unit": "PACE",
     "college_unit_type": "College",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVMH / PHSO / UVMCares",
@@ -389,7 +416,8 @@
     "college_unit": "PHSO",
     "college_unit_type": "Department",
     "department": "UVMCares",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVMH / HR / Employee Wellness",
@@ -403,7 +431,8 @@
     "college_unit": "HR",
     "college_unit_type": "Department",
     "department": "Employee Wellness",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVMH / DEI",
@@ -417,7 +446,8 @@
     "college_unit": "DEI",
     "college_unit_type": "Department",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVMH / Nutrtion/Culinary Medicine",
@@ -431,7 +461,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "Nutrtion/Culinary Medicine",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "UVMH / Medical Group / Psychiatry (clinical) / Osher WH Division",
@@ -445,7 +476,8 @@
     "college_unit": "Medical Group",
     "college_unit_type": "Physicain Group",
     "department": "Psychiatry (clinical)",
-    "division": "Osher WH Division"
+    "division": "Osher WH Division",
+    "parent": "UVMH / Medical Group"
   },
   {
     "id": "UVMH / Medical Group / Family Medicine (clinical)",
@@ -459,7 +491,8 @@
     "college_unit": "Medical Group",
     "college_unit_type": "Physicain Group",
     "department": "Family Medicine (clinical)",
-    "division": ""
+    "division": "",
+    "parent": "UVMH / Medical Group"
   },
   {
     "id": "UVMH / Medical Group / Anastesiology (clinical)",
@@ -473,7 +506,8 @@
     "college_unit": "Medical Group",
     "college_unit_type": "Physicain Group",
     "department": "Anastesiology (clinical)",
-    "division": ""
+    "division": "",
+    "parent": "UVMH / Medical Group"
   },
   {
     "id": "UVMH / Medical Group / Medicine (clinical)",
@@ -487,7 +521,8 @@
     "college_unit": "Medical Group",
     "college_unit_type": "Physicain Group",
     "department": "Medicine (clinical)",
-    "division": ""
+    "division": "",
+    "parent": "UVMH / Medical Group"
   },
   {
     "id": "UVMH / Medical Group / Emergency Med (clinical)",
@@ -501,7 +536,8 @@
     "college_unit": "Medical Group",
     "college_unit_type": "Physicain Group",
     "department": "Emergency Med (clinical)",
-    "division": ""
+    "division": "",
+    "parent": "UVMH / Medical Group"
   },
   {
     "id": "UVMH / Medical Group / Childrens Hospital (clinical)",
@@ -515,7 +551,8 @@
     "college_unit": "Medical Group",
     "college_unit_type": "Physicain Group",
     "department": "Childrens Hospital (clinical)",
-    "division": ""
+    "division": "",
+    "parent": "UVMH / Medical Group"
   },
   {
     "id": "UVMH / Medical Group / OBGYN (clinical)",
@@ -529,7 +566,8 @@
     "college_unit": "Medical Group",
     "college_unit_type": "Physicain Group",
     "department": "OBGYN (clinical)",
-    "division": ""
+    "division": "",
+    "parent": "UVMH / Medical Group"
   },
   {
     "id": "UVMH / Medical Group / Cancer Center (clinical)",
@@ -543,7 +581,8 @@
     "college_unit": "Medical Group",
     "college_unit_type": "Physicain Group",
     "department": "Cancer Center (clinical)",
-    "division": ""
+    "division": "",
+    "parent": "UVMH / Medical Group"
   },
   {
     "id": "Dartmouth",
@@ -557,7 +596,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "Dartmouth / NNE Coop",
@@ -571,7 +611,8 @@
     "college_unit": "NNE Coop",
     "college_unit_type": "Practice Based Research Network",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "Main Health",
@@ -585,7 +626,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "VT DOH",
@@ -599,7 +641,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "Osher Collaborative / Wisconsin",
@@ -613,7 +656,8 @@
     "college_unit": "Wisconsin",
     "college_unit_type": "Center; Institute",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "Osher Collaborative / Harvard",
@@ -627,7 +671,8 @@
     "college_unit": "Harvard",
     "college_unit_type": "Center; Institute",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "ACIMH / WHITS",
@@ -641,7 +686,8 @@
     "college_unit": "WHITS",
     "college_unit_type": "Professional Association",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "WPH Coalition",
@@ -655,7 +701,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "ACLM",
@@ -669,7 +716,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "SIO",
@@ -683,7 +731,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "Inst. for Behavior Change",
@@ -697,7 +746,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "DHVA / Medicaid",
@@ -711,7 +761,8 @@
     "college_unit": "Medicaid",
     "college_unit_type": "Government Agency",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "BCBSVT",
@@ -725,7 +776,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "PCORI",
@@ -739,7 +791,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "NCCIH",
@@ -753,7 +806,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "CMS",
@@ -767,7 +821,8 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
   },
   {
     "id": "SCUHS",
@@ -781,7 +836,88 @@
     "college_unit": "",
     "college_unit_type": "",
     "department": "",
-    "division": ""
+    "division": "",
+    "parent": ""
+  },
+  {
+    "id": "UVM / CNHS",
+    "type": "org",
+    "label": "CNHS",
+    "short": "CNHS",
+    "level": "unit",
+    "n_projects": 0,
+    "synthetic": true,
+    "organization": "UVM",
+    "organization_type": "University",
+    "college_unit": "CNHS",
+    "college_unit_type": "College",
+    "department": "",
+    "division": "",
+    "parent": ""
+  },
+  {
+    "id": "UVM / CASS",
+    "type": "org",
+    "label": "CASS",
+    "short": "CASS",
+    "level": "unit",
+    "n_projects": 0,
+    "synthetic": true,
+    "organization": "UVM",
+    "organization_type": "University",
+    "college_unit": "CASS",
+    "college_unit_type": "College",
+    "department": "",
+    "division": "",
+    "parent": ""
+  },
+  {
+    "id": "UVM / LCOM",
+    "type": "org",
+    "label": "LCOM",
+    "short": "LCOM",
+    "level": "unit",
+    "n_projects": 0,
+    "synthetic": true,
+    "organization": "UVM",
+    "organization_type": "University",
+    "college_unit": "LCOM",
+    "college_unit_type": "College",
+    "department": "",
+    "division": "",
+    "parent": ""
+  },
+  {
+    "id": "UVM / CEMS",
+    "type": "org",
+    "label": "CEMS",
+    "short": "CEMS",
+    "level": "unit",
+    "n_projects": 0,
+    "synthetic": true,
+    "organization": "UVM",
+    "organization_type": "University",
+    "college_unit": "CEMS",
+    "college_unit_type": "College",
+    "department": "",
+    "division": "",
+    "parent": ""
+  },
+  {
+    "id": "UVMH / Medical Group",
+    "type": "org",
+    "label": "Medical Group",
+    "short": "UVM Health",
+    "level": "unit",
+    "n_projects": 0,
+    "synthetic": true,
+    "organization": "UVMH",
+    "organization_type": "Healthcare Organization",
+    "college_unit": "Medical Group",
+    "college_unit_type": "Physicain Group",
+    "department": "",
+    "division": "",
+    "parent": ""
   },
   {
     "id": "P1",
